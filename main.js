@@ -15,4 +15,10 @@ $(document).ready(function () {
       document.body.classList.toggle("dark-theme");
     });
   });
+
+  let toggleBtn = document.querySelector('.toggleBtn');
+        let menu = document.querySelector('.menu');
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
   
