@@ -16,6 +16,8 @@ $(document).ready(function () {
     });
   });
 
+  /* Menu Animado */
+
   let toggleBtn = document.querySelector('.toggleBtn');
         let menu = document.querySelector('.menu');
         toggleBtn.addEventListener('click', () => {
