@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+}
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+header a{
+    color: #eee;
+    margin-right: 40px;
+}
+
+/* carousel */
+.carousel{
+    height: 100vh;
+    margin-top: -50px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+/* Torna o carrossel um fundo fixo */
+.carousel .list .item {
+    width: 100%;
+    height: 100vh; /* Altura da tela */
+    position: relative;
+    background: url('imagemHabitat/Amazônia.webp') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem preencha a tela */
+    overflow: hidden; /* Impede overflow lateral */
+    z-index: 1; /* Mantém a imagem no fundo */
+}
+
+/* Oculta a imagem original */
+.carousel .list .item img {
+    display: none;
+}
+
+/* Ajusta o espaçamento para evitar sobreposição */
+.carousel .list .item .content {
+    position: relative;
+    padding: 120px 20px 20px; /* Top aumentado para descer os elementos */
+    z-index: 10; /* Garante que o texto fique visível acima da imagem */
+    max-height: calc(100% - 120px); /* Evita overflow visual */
+    overflow-y: auto; /* Permite rolar o texto, se necessário */
+}
+/* Torna o texto explicativo maior para melhor leitura */
+.carousel .list .item .des a {
+    font-size: 20px; /* Aumenta o tamanho do texto */
+    line-height: 1.8; /* Melhora o espaçamento entre linhas */
+}
+/* Melhora a visibilidade dos cabeçalhos */
+.carousel .list .item .des h1 {
+    font-size: 40px; /* Aumenta o tamanho do título */
+    margin-bottom: 10px; /* Espaçamento adicional entre cabeçalhos */
+    color: #f1683a; /* Destaca os títulos */
+    text-align: center;
+}
+.carousel .list .item .des h2 {
+    font-size: 30px; /* Aumenta o tamanho do título */
+    margin-bottom: 10px; /* Espaçamento adicional entre cabeçalhos */
+    color: #133c71; /* Destaca os títulos */
+    text-align: center;
+}
+
+/* Caixa transparente para os textos */
+.carousel .list .item .content .des {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+
+
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    color: #f1683a;
+}
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.extra-content {
+    padding: 20px;
+    max-width: 1140px;
+    margin: auto;
+    background-color: #111;
+    color: #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.extra-content h2 {
+    font-size: 24px;
+    color: #f1683a;
+    margin-bottom: 15px;
+}
+
+.extra-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
