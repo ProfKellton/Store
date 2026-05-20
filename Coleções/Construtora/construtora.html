@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K.R Construtora</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#222;
+      line-height:1.6;
+    }
+
+    cabecalho{
+      background:#111;
+      color:#fff;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+
+    menu a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    menu a:hover{
+      color:#d4a017;
+    }
+
+    .banner{
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      align-items:center;
+
+      padding:0 8%;
+
+      color:#fff;
+    }
+
+    .conteudo-banner{
+      max-width:650px;
+    }
+
+    .conteudo-banner h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .conteudo-banner p{
+      font-size:18px;
+      margin-bottom:30px;
+    }
+
+    .botao{
+      display:inline-block;
+      padding:14px 32px;
+      background:#d4a017;
+      color:#fff;
+      text-decoration:none;
+      border-radius:4px;
+      transition:0.3s;
+    }
+
+    .botao:hover{
+      background:#b88810;
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .titulo-secao{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .titulo-secao h2{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .lista-servicos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .caixa{
+      background:#fff;
+      padding:35px 25px;
+      border-radius:8px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .caixa:hover{
+      transform:translateY(-8px);
+    }
+
+    .caixa h3{
+      color:#d4a017;
+      margin-bottom:15px;
+    }
+
+    .lista-projetos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .projeto{
+      position:relative;
+      overflow:hidden;
+      border-radius:8px;
+    }
+
+    .projeto img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .projeto:hover img{
+      transform:scale(1.08);
+    }
+
+    .informacoes-projeto{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      padding:20px;
+      color:#fff;
+      background:linear-gradient(transparent, rgba(0,0,0,0.9));
+    }
+
+    .empresa{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .empresa img{
+      width:100%;
+      border-radius:8px;
+    }
+
+    .contato{
+      background:#111;
+      color:#fff;
+      text-align:center;
+    }
+
+    .contato h2{
+      margin-bottom:20px;
+    }
+
+    footer{
+      background:#000;
+      color:#aaa;
+      text-align:center;
+      padding:20px;
+      font-size:14px;
+    }
+
+    .botao-whatsapp{
+
+      position:fixed;
+
+      right:25px;
+      bottom:25px;
+
+      background:#25d366;
+      color:#fff;
+
+      padding:14px 18px;
+
+      border-radius:50px;
+
+      text-decoration:none;
+
+      font-weight:bold;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+      z-index:1000;
+
+      transition:0.3s;
+    }
+
+    .botao-whatsapp:hover{
+
+      background:#1ebe5d;
+
+      transform:scale(1.05);
+    }
+
+    @media(max-width:900px){
+
+      .conteudo-banner h1{
+        font-size:42px;
+      }
+
+      .empresa{
+        grid-template-columns:1fr;
+      }
+
+      menu{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <cabecalho>
+
+    <div class="logo">K.R</div>
+
+    <menu>
+      <a href="#inicio">Início</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#comentarios">Comentários</a>
+      <a href="#contato">Contato</a>
+    </menu>
+
+  </cabecalho>
+
+  <section class="banner" id="inicio">
+
+    <div class="conteudo-banner">
+
+      <h1>Construindo projetos modernos com qualidade e confiança.</h1>
+
+      <p>
+        Especialistas em obras residenciais, comerciais e industriais,
+        entregando resultados com segurança, planejamento e excelência.
+      </p>
+
+      <a href="#contato" class="botao">Solicitar orçamento</a>
+
+    </div>
+
+  </section>
+
+  <section id="servicos">
+
+    <div class="titulo-secao">
+      <h2>Nossos Serviços</h2>
+      <p>Atendimento completo para diferentes tipos de construção.</p>
+    </div>
+
+    <div class="lista-servicos">
+
+      <div class="caixa">
+        <h3>Construção Residencial</h3>
+
+        <p>
+          Desenvolvimento de casas modernas e condomínios planejados.
+        </p>
+      </div>
+
+      <div class="caixa">
+        <h3>Projetos Comerciais</h3>
+
+        <p>
+          Estruturas funcionais para empresas, lojas e escritórios.
+        </p>
+      </div>
+
+      <div class="caixa">
+        <h3>Reformas</h3>
+
+        <p>
+          Modernização de ambientes com acabamento de alto padrão.
+        </p>
+      </div>
+
+      <div class="caixa">
+        <h3>Gerenciamento</h3>
+
+        <p>
+          Controle técnico e acompanhamento completo da obra.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projetos">
+
+    <div class="titulo-secao">
+      <h2>Projetos Recentes</h2>
+      <p>Empreendimentos realizados pela K.R Construtora.</p>
+    </div>
+
+    <div class="lista-projetos">
+
+      <div class="projeto">
+
+        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="informacoes-projeto">
+          <h3>Residencial Aurora</h3>
+        </div>
+
+      </div>
+
+      <div class="projeto">
+
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="informacoes-projeto">
+          <h3>Centro Empresarial Atlas</h3>
+        </div>
+
+      </div>
+
+      <div class="projeto">
+
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="informacoes-projeto">
+          <h3>Complexo Horizonte</h3>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="empresa">
+
+    <div class="empresa">
+
+      <div>
+
+        <h2>Sobre a Empresa</h2>
+
+        <p style="margin-top:20px;">
+
+          A K.R Construtora atua no mercado da construção civil
+          oferecendo soluções modernas, seguras e eficientes para
+          diferentes tipos de obras.
+
+        </p>
+
+        <p style="margin-top:15px;">
+
+          Nosso compromisso é entregar projetos com qualidade,
+          transparência e alto nível de execução.
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="comentarios">
+
+    <div class="titulo-secao">
+      <h2>Comentários</h2>
+      <p>Veja o que nossos clientes dizem sobre nossos serviços.</p>
+    </div>
+
+    <div class="lista-servicos">
+
+      <div class="caixa">
+
+        <h3>Jadi</h3>
+
+        <p>
+          Excelente atendimento e entrega dentro do prazo combinado.
+        </p>
+
+      </div>
+
+      <div class="caixa">
+
+        <h3>Matheus</h3>
+
+        <p>
+          Equipe organizada e acabamento muito bem feito.
+        </p>
+
+      </div>
+
+      <div class="caixa">
+
+        <h3>Francisco</h3>
+
+        <p>
+          Profissionais responsáveis e serviço de qualidade.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="contato" id="contato">
+
+    <h2>Entre em contato</h2>
+
+    <p>Email: contato@krconstrutora.com</p>
+    <p>Telefone: (81) 99999-9999</p>
+    <p>Recife - Pernambuco</p>
+
+  </section>
+
+  <footer>
+    © 2026 K.R Construtora — Todos os direitos reservados.
+  </footer>
+
+  <a href="https://wa.me/5581999999999"
+     class="botao-whatsapp"
+     target="_blank">
+
+     WhatsApp
+
+  </a>
+
+</body>
+</html>
